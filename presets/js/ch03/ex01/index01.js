@@ -1,0 +1,30 @@
+let a = Infinity
+let b = -Infinity
+let c = NaN
+let d = -NaN
+
+console.log(a+b)
+console.log(a-b)
+console.log(b-c)
+console.log(a*b)
+console.log(a/b)
+console.log(a+c)
+console.log(a-c)
+console.log(a*c)
+console.log(a/c)
+console.log(a+d)
+console.log(a-d)
+console.log(a*d)
+console.log(a/d)
+console.log(b+c)
+console.log(b-c)
+console.log(b*c)
+console.log(b/c)
+console.log(b+d)
+console.log(b-d)
+console.log(b*d)
+console.log(b/d)
+console.log(c+d)
+console.log(c-d)
+console.log(c*d)
+console.log(c/d)
