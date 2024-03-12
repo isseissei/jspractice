@@ -6,4 +6,4 @@ let constfunc = ()=>{
     }
     console.log(value);//33
 }
-constfunc();
+constfunc();//あああああああああ

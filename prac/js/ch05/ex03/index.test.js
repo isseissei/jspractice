@@ -6,7 +6,7 @@ const inputWord3 = "ricoh"
 describe("math", () => {
   describe("曜日変換", () => {
     it("changeif", () => {
-        expect(obj.changeif(inputWord1)).toBe(false);
+        expect(obj.changeif(inputWord1)).toBe(false);//.toBeFalsyで代用可能
     });
     it("changeif", () => {
         expect(obj.changeif(inputWord2)).toBe(true);
