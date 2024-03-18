@@ -6,4 +6,10 @@ let q = Object.create(p);
 q.z = 3;
 let f = q.toString();
 
-console.log(Foo.prototype.isPrototypeOf(bar));
+console.log(o.isPrototypeOf(q));//true
+console.log(o.isPrototypeOf(p));//true
+console.log(p.isPrototypeOf(q));//true
+
+console.log(Object.prototype.isPrototypeOf(Date))//true
+console.log(Object.prototype.isPrototypeOf(Map))//true
+console.log(Object.prototype.isPrototypeOf(Array))//true
