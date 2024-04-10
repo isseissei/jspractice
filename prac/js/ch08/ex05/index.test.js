@@ -10,3 +10,8 @@ test("エラー動作", () => {
     expect(() => { sequenceToObject("猫",5,"ワニ"); }).toThrowError('value is invarid');
     expect(() => { sequenceToObject(3,5); }).toThrowError('value is invarid');
 });
+
+test("スプレッド演算子", () => {
+    const spr =["猫",3 , "犬", 5];
+    expect(sequenceToObject(...spr)).toStrictEqual(obj1);
+});
