@@ -1,4 +1,4 @@
-export function addMyCall(f){
+export function addMyCall(f) {
     f.myCall = function (context, ...args) {
         return f.bind(context)(...args);
     };
@@ -6,7 +6,7 @@ export function addMyCall(f){
 
 const person = { name: 'John' };
 
-function func (){
+function func() {
     console.log(this.name)
 }
 
