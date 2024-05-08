@@ -1,0 +1,1 @@
+export {mult, good} from "./modules.mjs";
