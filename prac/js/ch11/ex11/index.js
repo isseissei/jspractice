@@ -1,7 +1,7 @@
 // N 回何もしないループの時間を返す
 function costOfLoop(N) {
   const start = performance.now();
-  for (let i = 0; i < N; i++) {}
+  for (let i = 0; i < N; i++) { }
   const end = performance.now();
   return end - start;
 }
@@ -30,5 +30,8 @@ function costOfLength(N) {
 }
 
 // 以下を変更して実験しなさい
-console.log(costOfLength(10000));
-console.log(costOfLength(100000000));
+const small = costOfLength(10000);
+const big = costOfLength(100000000);
+console.log(small);
+console.log(big);
+console.log(big-small)
