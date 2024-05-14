@@ -1,1 +1,1 @@
-export {mult, good} from "./modules.mjs";
+export {multChanged as mult, moregood} from "./modules.mjs";

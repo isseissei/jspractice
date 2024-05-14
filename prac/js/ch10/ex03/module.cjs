@@ -1,10 +1,10 @@
-class Person {
+class PersonChanged {
     constructor(name, age) {
         this.name = name;
         this.age = age;
     }
 }
 
-const sum = (x, y) => x + y;
+const sumChanged = (x, y) => x + y;
 
-module.exports = { Person, sum };
+module.exports = { Person: PersonChanged, sum: sumChanged };
