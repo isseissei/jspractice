@@ -111,3 +111,17 @@ wait1
     |-|
       throwErrY
       |-|
+        logA
+        |-|
+
+[11]
+X
+.catchでキャッチできた
+errX
+|-|
+  catch
+  |-|
+
+[12]
+throwErrorX
+キャッチしない

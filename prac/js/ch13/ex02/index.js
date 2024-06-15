@@ -155,7 +155,7 @@ function f9() {
         .catch((e) => log(e.message))
         .finally(logA);
 }
-f10();
+
 function f10() {
     // NOTE: then(r, c) と then(r).catch(c) は等しいか？
     wait1()
@@ -170,7 +170,7 @@ function f11() {
         errX();
     }).catch((e) => log(e.message));
 }
-
+f12();
 function f12() {
     // new Promise 内だがコールバック関数で throw した場合は？
     new Promise((resolve, reject) => {
