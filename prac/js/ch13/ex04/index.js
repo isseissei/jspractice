@@ -1,4 +1,4 @@
-import { error } from "node:console";
+
 import * as fsPromises from "node:fs/promises";
 
 export function FetchFirstFileSize(path) {
