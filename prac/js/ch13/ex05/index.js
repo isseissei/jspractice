@@ -27,6 +27,14 @@ function g2() {
 }
 
 
+function g3() {//正攻法がわからなかったです
+    fetchUser()
+        .then((user) => {
+            process.stdout.write(user.name + " has ");
+            return fetchUserFriends(user);
+        })
+        .then((friends) => console.log(friends.length + " friends!"))
+}
 function fetchUser() {
     return Promise.resolve({ id: 42, name: "John" });
 }
@@ -37,13 +45,14 @@ function fetchUserFriends(user) {
     ]);
 }
 
-function g3() {//正攻法がわからなかったです
-    // 以下2つの関数が存在するとします (中身は適当)
-    // TODO: var, let, const による変数宣言を無くしなさい。async/awaitは使用しないこと。
-    fetchUser()
-        .then((user) => {
-            process.stdout.write(user.name + " has ");
-            return fetchUserFriends(user);
-        })
-        .then((friends) => console.log(friends.length + " friends!"))
+function g4() {
+    function someFunction() {
+        return 42;
+    }
+    // NOTE: この関数 g4 は Promise を返す必要があるものとする
+    // (利用しているフレームワークはライブラリがそういう関数を要求するとでも思って下さい)
+    // TODO: new Promise を使わないように書き換えなさい。async/awaitは使用しないこと。
+    const value = someFunction();
+    return Promise.resolve(value);
 }
+//g4().then((res) => console.log(res))//42
