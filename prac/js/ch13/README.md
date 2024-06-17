@@ -528,6 +528,7 @@ async function i3() {
       wait3().then(() => {
         v = 0;
         errX();
+        log()
       }),
       wait2().then(() => {
         logB();

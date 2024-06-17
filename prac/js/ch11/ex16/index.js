@@ -15,7 +15,6 @@ export function retryWithExponentialBackoff(func, maxRetry, callback) {
             callback(false);
         }
     };
-
     retry(0);
 }
 
