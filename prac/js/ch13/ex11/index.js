@@ -14,7 +14,6 @@ export async function RetryWithExponentialBackoff(func, maxRetry) {
             count = maxRetry
             return res
         } catch (err) {
-            console.log("false:ちょっと待ってね")
             await new Promise(resolve => setTimeout(resolve, 3000));
         }
     }
@@ -32,6 +31,6 @@ async function exampleAsyncFunction() {
     return "成功しました";
 }
 
-RetryWithExponentialBackoff(exampleAsyncFunction, 3)
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
+// RetryWithExponentialBackoff(exampleAsyncFunction, 3)
+//     .then(res => console.log(res))
+//     .catch(err => console.log(err))

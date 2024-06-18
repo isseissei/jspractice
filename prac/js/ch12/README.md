@@ -52,6 +52,7 @@ function* counterGen(max) {
   } finally {
     console.log("counterGen: finally");
   }
+}
 ```
 
 **出題範囲**: 全体
