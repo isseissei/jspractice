@@ -13,10 +13,10 @@ export function* counter() {
     }
 }
 
-const Count = counter();
-Count.next()
-Count.next()
-Count.next()
-Count.throw(new Error("わーい"))
-Count.next()
-Count.next()
+// const Count = counter();
+// Count.next()
+// Count.next()
+// Count.next()
+// Count.throw(new Error("わーい"))
+// Count.next()
+// Count.next()
