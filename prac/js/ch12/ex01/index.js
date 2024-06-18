@@ -25,13 +25,19 @@ function counterIter(max) {
         },
     };
 }
+// function kansetsu(ite){
+//     return ite.next()
+// }
 
-const X = counterIter(5);
-for (const num of X) {
-        if(num>2) break;
-    console.log(num)
-}
-
+// const X = counterIter(5);
+// //console.log(X.next())
+// console.log(X.return(999));
+// try {
+//     X.throw(new Error("えらーだよ"));
+// } catch (e) {
+//     console.log(e);
+// }
+// kansetsu(X)
 
 function* counterGen(max) {
     console.log("counterGen");
@@ -47,3 +53,6 @@ function* counterGen(max) {
     }
 }
 //counterGen(5)
+
+const gen = counterGen(3);
+gen.next()
