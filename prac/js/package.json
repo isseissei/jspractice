@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand -- testPathPattern = ch13/",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand -- testPathPattern = ch14/ex06",
     "lint": "eslint . --max-warnings=0",
     "format": "prettier --write ."
   },
