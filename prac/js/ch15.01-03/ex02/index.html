@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>動的インポート</title>
+</head>
+<body>
+  <button id="Button">ロード</button>
+  <script type="module">
+    document.getElementById('Button').addEventListener('click', async () => {
+      const module = await import('./ex02/myModule.js');
+      module.log();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>詐欺サイト</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #080808;
+            padding: 20px;
+            text-align: center;
+            color: red;
+        }
+
+        .info-box {
+            background-color: rgb(73, 4, 4);
+            border: 1px solid #080808;
+            padding: 3px;
+            margin: 10px 0;
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 >ご入会ありがとうございます！！</h1>
+    <div class="info-box">
+        <h2>パソコン:</h2>
+        <p id="platform"></p>
+    </div>
+    <div class="info-box">
+        <h2>お住まいの地域:</h2>
+        <p id="language"></p>
+    </div>
+    <div class="info-box">
+        <h2>クッキーの設定:</h2>
+        <p id="cookiesEnabled"></p>
+    </div>
+    <div class="info-box">
+        <h2>お使いのPCメモリ:</h2>
+        <p id="memory"></p>
+    </div>
+    <div class="info-box">
+        <h2>インターネット状況:</h2>
+        <p id="onlineStatus"></p>
+    </div>
+    <div class="info-box">
+        <h2>スクリーンサイズ:</h2>
+        <p id="screenResolution"></p>
+    </div>
+
+    <script>
+        document.getElementById("platform").textContent = navigator.platform;
+        document.getElementById("language").textContent = navigator.language;
+        document.getElementById("cookiesEnabled").textContent = navigator.cookieEnabled?"有効":"無効";
+        document.getElementById("memory").textContent = navigator.deviceMemory+"GB";
+        document.getElementById("onlineStatus").textContent = navigator.onLine ? "オンライン" : "オフライン";
+        document.getElementById("screenResolution").textContent = `${screen.width} x ${screen.height}`;
+    </script>
+</body>
+
+</html>
