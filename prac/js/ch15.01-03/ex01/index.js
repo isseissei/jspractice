@@ -48,3 +48,7 @@ form.addEventListener("submit", (e) => {
   elem.appendChild(destroy);
 
 });
+//2の答え
+//deferを付ける
+
+//
