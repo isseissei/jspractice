@@ -1,3 +1,116 @@
-.completed {
+/* ベーススタイル */
+/*  */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5dc; /* ベージュの背景色 */
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url('https://www.transparenttextures.com/patterns/wood.png'); /* 木目調の背景 */
+  background-size: cover;
+}
+
+/* フォームに関する部分、大きさ */
+form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+/* フォームの中の文字。の書式等 */
+input[type="text"] {
+  flex-grow: 1;/*文字の拡張性*/
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-right: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fffaf0; /* アイボリーの背景色 */
+}
+
+/* addボタンに関する書式 */
+button {
+  padding: 10px 15px;
+  background-color: #8fbc8f; /* ダークシーグリーン */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* addボタンにマウスを乗せたときの書式。色が変わる */
+button:hover {
+  background-color: #6b8e23; /* オリーブドラブ */
+}
+
+/* ToDoリストの書式 */
+#todo-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* 右に出てくるすでに書いたリストの書式 */
+li {
+  background-color: #fffaf0; /* アイボリーの背景色 */
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+/* リストにマウスを当てたときの色変わるやつ */
+li:hover {
+  background-color: #f5deb3; /* ウィートカラー */
+}
+
+/* チェックボックス内の文字に関するやつ */
+.view {
+  display: flex;
+  align-items: center;
+}
+
+/* チェックボックスと文字の間を書く */
+.toggle {
+  margin-right: 15px;
+}
+
+/* リストの中の文字の書式 */
+label {
+  flex-grow: 1;
+  font-size: 16px;
+  color: #333;
+}
+
+/* 文字の横の×ボタンの書式を表す */
+button.destroy {
+  background-color: transparent;
+  border: none;
+  color: #cd5c5c; /* インディアンレッド */
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+/* ×ボタンにマウスを当てたときの変化を表す */
+button.destroy:hover {
+  color: #ff4500; /* オレンジレッド */
+}
+
+/* 完了したToDoのスタイル。線が引かれるやつ */
+.completed label {
   text-decoration: line-through;
+  color: #a3a3a3;
 }
