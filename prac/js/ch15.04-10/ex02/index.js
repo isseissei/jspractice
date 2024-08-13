@@ -20,6 +20,9 @@ form.addEventListener("submit", (e) => {
   toggle.addEventListener("change", () => {
     // IMPORTANT: ChatGPT にはこの関数内のコードのみ変更してもらうこと
     li.classList.toggle("completed", toggle.checked);
+    li.classList.toggle("bg-gray-200", toggle.checked);
+    li.classList.toggle("line-through", toggle.checked);
+    li.classList.toggle("text-gray-500", toggle.checked);
   });
   label.textContent = todo;
   destroy.addEventListener("click", () => {
