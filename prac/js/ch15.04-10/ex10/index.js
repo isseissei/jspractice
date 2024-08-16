@@ -47,6 +47,43 @@ function updateGrid(grid) {
   for (let row = 0; row < ROWS; row++) {
     for (let col = 0; col < COLS; col++) {
       // 周囲のセルの生存数を数えて nextGrid[row][col] に true or false を設定する (実装してね)
+      //メモ：
+      //falseの時:生存3ならtrue
+      //trueの時:生存2or3ならtrue
+      //生存0or1ならfalse
+      //生存4,5,6,7,8ならfalse
+      //newGrid[row][col]
+
+      const aroundSell = [
+        row > 0 && col > 0 ? grid[row - 1][col - 1] : false,      // 左上
+        row > 0 ? grid[row - 1][col] : false,                     // 上
+        row > 0 && col < COLS - 1 ? grid[row - 1][col + 1] : false, // 右上
+        col > 0 ? grid[row][col - 1] : false,                     // 左
+        col < COLS - 1 ? grid[row][col + 1] : false,              // 右
+        row < ROWS - 1 && col > 0 ? grid[row + 1][col - 1] : false, // 左下
+        row < ROWS - 1 ? grid[row + 1][col] : false,              // 下
+        row < ROWS - 1 && col < COLS - 1 ? grid[row + 1][col + 1] : false // 右下
+      ];
+
+      const trueCount = aroundSell.filter(value => value === true).length;
+      if (grid[row][col] === false) {
+        if (trueCount == 3) {
+          nextGrid[row][col] = true
+        } else {
+          nextGrid[row][col] = false
+        }
+      } else {
+        switch (trueCount) {
+          case 0 || 1:
+            nextGrid[row][col] = false
+            break;
+          case 2 || 3:
+            nextGrid[row][col] = true
+            break;
+          default:
+            nextGrid[row][col] = false
+        }
+      }
     }
   }
   return nextGrid;
@@ -67,9 +104,19 @@ canvas.addEventListener("click", function (evt) {
 // requestAnimationFrame によって一定間隔で更新・描画を行う
 // NOTE: リフレッシュレートの高い画面では速く実行される (これを防ぐ場合は下記の例を参照)
 // https://developer.mozilla.org/ja/docs/Web/API/Window/requestAnimationFrame
-function update() {
-  grid = updateGrid(grid);
-  renderGrid(grid);
+let lastTime = 0;
+const fps = 60;
+const interval = 100000 / fps;
+function update(timestamp) {
+  if (!lastTime) lastTime = timestamp;
+  const deltaTime = timestamp - lastTime;
+
+  if (deltaTime >= interval) {
+    grid = updateGrid(grid);
+    renderGrid(grid);
+    lastTime = timestamp;
+  }
+
   animationId = requestAnimationFrame(update);
 }
 
