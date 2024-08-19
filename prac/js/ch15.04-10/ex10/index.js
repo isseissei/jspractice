@@ -74,10 +74,12 @@ function updateGrid(grid) {
         }
       } else {
         switch (trueCount) {
-          case 0 || 1:
+          case 0:
+          case 1:
             nextGrid[row][col] = false
             break;
-          case 2 || 3:
+          case 2:
+          case 3:
             nextGrid[row][col] = true
             break;
           default:
@@ -106,7 +108,7 @@ canvas.addEventListener("click", function (evt) {
 // https://developer.mozilla.org/ja/docs/Web/API/Window/requestAnimationFrame
 let lastTime = 0;
 const fps = 60;
-const interval = 100000 / fps;
+const interval = 10000 / fps;
 function update(timestamp) {
   if (!lastTime) lastTime = timestamp;
   const deltaTime = timestamp - lastTime;
