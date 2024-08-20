@@ -40,7 +40,16 @@ form.addEventListener("submit", (e) => {
   input.value = "";
 
   todos.push({ content: todo, completed: false });
-  renderTodos(todos);
+  const hash = window.location.hash;
+  if (hash == "#/") {
+    renderTodos(todos);
+  }
+  if (hash == "#/active") {
+    renderTodosActive(todos)
+  }
+  if (hash == "#/completed") {
+    renderTodosCompleted(todos)
+  }
 });
 
 window.addEventListener("hashchange", () => {
