@@ -3,7 +3,6 @@ import WebSocket, { WebSocketServer } from "ws";
 const port = 3003;
 const wss = new WebSocketServer({ port });
 
-// 他のクライアントにメッセージを転送する
 wss.on("connection", (ws) => {
   ws.on("message", (data) => {
     const message = data.toString();
