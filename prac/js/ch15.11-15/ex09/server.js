@@ -62,6 +62,39 @@ function updateGrid(grid) {
     for (let col = 0; col < COLS; col++) {
       // 周囲のセルの生存数を数えて nextGrid[row][col] に true or false を設定する
       //（15.04-10.10の実装を利用）
+      const aroundSell = [
+        row > 0 && col > 0 ? grid[row - 1][col - 1] : false,      // 左上
+        row > 0 ? grid[row - 1][col] : false,                     // 上
+        row > 0 && col < COLS - 1 ? grid[row - 1][col + 1] : false, // 右上
+        col > 0 ? grid[row][col - 1] : false,                     // 左
+        col < COLS - 1 ? grid[row][col + 1] : false,              // 右
+        row < ROWS - 1 && col > 0 ? grid[row + 1][col - 1] : false, // 左下
+        row < ROWS - 1 ? grid[row + 1][col] : false,              // 下
+        row < ROWS - 1 && col < COLS - 1 ? grid[row + 1][col + 1] : false // 右下
+      ];
+
+      const trueCount = aroundSell.filter(value => value === true).length;
+      if (grid[row][col] === false) {
+        if (trueCount == 3) {
+          nextGrid[row][col] = true
+        } else {
+          nextGrid[row][col] = false
+        }
+      } else {
+        switch (trueCount) {
+          case 0:
+          case 1:
+            nextGrid[row][col] = false
+            break;
+          case 2:
+          case 3:
+            nextGrid[row][col] = true
+            break;
+          default:
+            nextGrid[row][col] = false
+        }
+      }
+
     }
   }
   return nextGrid;

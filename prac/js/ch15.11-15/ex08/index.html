@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8</title>
 </head>
-
 <body>
-    ああああ
-</body>
+  <div id="request-container">
+    <input type="text" id="request1" placeholder="Enter message 1">
+    <button onclick="send(1)">Send Request 1</button>
+    <div id="response1"></div>
 
+    <input type="text" id="request2" placeholder="Enter message 2">
+    <button onclick="send(2)">Send Request 2</button>
+    <div id="response2"></div>
+  </div>
+
+  <script src="/ch15.11-15/ex08/index.js"></script>
+</body>
 </html>
