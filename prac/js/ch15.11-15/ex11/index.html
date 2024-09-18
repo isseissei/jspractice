@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandelbrot Worker Example</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mandelbrot with Web Worker</h1>
+    <canvas id="mandelbrotCanvas" width="512" height="512"></canvas>
+
+    <script>
+        // Canvas setup
+        const canvas = document.getElementById('mandelbrotCanvas');
+        const ctx = canvas.getContext('2d');
+        const width = canvas.width;
+        const height = canvas.height;
+
+     
+        const worker = new Worker('./pWorker.js');  
+
+        worker.onmessage = function (message) {
+            const { imageData } = message.data;
+            ctx.putImageData(imageData, 0, 0);  
+        };
+
+        const tile = { width, height };  
+        const iterations = 6;            
+
+        worker.postMessage({ tile, iterations });  
+    </script>
+</body>
+</html>
