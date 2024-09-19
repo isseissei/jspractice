@@ -5,7 +5,7 @@ onmessage = function (message) {
     const imageData = new ImageData(width, height);
     const data = imageData.data;
 
-    function drawGasket(x, y, size) {
+    function draw(x, y, size) {
         if (size < 1) return;
 
         const half = size / 2;
@@ -20,20 +20,17 @@ onmessage = function (message) {
             }
         }
 
-        drawGasket(x, y, half);
-        drawGasket(x + half, y, half);
-        drawGasket(x + half / 2, y + half, half);
+        draw(x, y, half);
+        draw(x + half, y, half);
+        draw(x + half / 2, y + half, half);
     }
 
     function setPixel(x, y, brightness) {
         const index = (x + y * width) * 4;
-        data[index] = brightness;        // 赤
-        data[index + 1] = brightness;    // 緑
-        data[index + 2] = brightness;    // 青
-        data[index + 3] = 255;
+        data[index] = brightness;        
+        data[index + 1] = brightness;    
+        data[index + 2] = brightness;    
     }
 
-    drawGasket(0, 0, Math.min(width, height));
-
-    postMessage({ tile, imageData });
+    draw(0, 0, Math.min(width, height));
 };

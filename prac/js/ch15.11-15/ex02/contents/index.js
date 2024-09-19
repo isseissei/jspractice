@@ -4,7 +4,7 @@ const list = document.querySelector("#todo-list");
 const input = document.querySelector("#new-todo");
 
 document.addEventListener("DOMContentLoaded", async () => {
-  disableInteraction(true); 
+  disableInteraction(true);
 
   retryWithExponentialBackoff(
     () => fetchWithTimeout('http://localhost:3000/api/tasks', { method: 'GET' }, 3000),
@@ -40,9 +40,9 @@ form.addEventListener("submit", (e) => {
     }, 3000),
     1,
     (success, task) => {
-      disableInteraction(false); 
+      disableInteraction(false);
       if (success) {
-        appendToDoItem([task]); 
+        appendToDoItem([task]);
       } else {
         alert('追加失敗');
       }
@@ -132,7 +132,7 @@ function retryWithExponentialBackoff(func, maxRetry, callback) {
         }
       });
   };
-  
+
   retry();
 }
 //disableするやつ

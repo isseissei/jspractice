@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 form.addEventListener("submit", (e) => {
-  // TODO: ここで form のイベントのキャンセルを実施しなさい (なぜでしょう？)
+  // TODO: ここで form のイベントのキャンセルを実施しなさい (なぜでしょう？)→送信されるのをふせぐ
   e.preventDefault()
   // 両端からホワイトスペースを取り除いた文字列を取得する
   const todo = input.value.trim();
@@ -84,7 +84,7 @@ function appendToDoItem(task) {
   const destroy = document.createElement("button");
   // TODO: destroy がクリック (click) された場合に API を呼び出してタスク を削除し
   // 成功したら elem を削除しなさい
-  
+
   destroy.textContent = "削除";
   destroy.addEventListener("click", () => {
     fetch(`http://localhost:3000/api/tasks/${task.id}`, {

@@ -1,5 +1,3 @@
-
-// WebSocket接続の初期化
 const ws = new WebSocket('ws://localhost:3003');
 const gridElement = document.getElementById('grid');
 const startButton = document.getElementById('start');
@@ -22,7 +20,6 @@ function createGrid(grid) {
   });
 }
 
-// サーバからのメッセージを受信
 ws.onmessage = (event) => {
   const data = JSON.parse(event.data);
 
@@ -31,21 +28,17 @@ ws.onmessage = (event) => {
       createGrid(data.grid);
       break;
     case 'pause':
-      console.log('Game paused');
       break;
     case 'start':
-      console.log('Game started');
       break;
   }
 };
 
-// ゲームの開始・再開
 startButton.addEventListener('click', () => {
   ws.send(JSON.stringify({ type: 'start' }));
   console.log("start")
 });
 
-// ゲームの一時停止
 pauseButton.addEventListener('click', () => {
   ws.send(JSON.stringify({ type: 'pause' }));
 });

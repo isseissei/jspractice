@@ -9,7 +9,7 @@ const openDB = () => {
     const request = indexedDB.open("todoDB", 1);
 
     request.onerror = (event) => {
-      reject("Database error: " + event.target.errorCode);
+      reject(event.target.errorCode);
     };
 
     request.onsuccess = (event) => {
@@ -36,7 +36,7 @@ const saveDB = (todo) => {
     };
 
     request.onerror = (event) => {
-      reject("Error adding todo: " + event.target.errorCode);
+      reject(event.target.errorCode);
     };
   });
 };
@@ -52,7 +52,7 @@ const getTodo = () => {
     };
 
     request.onerror = (event) => {
-      reject("Error retrieving todos: " + event.target.errorCode);
+      reject(event.target.errorCode);
     };
   });
 };
@@ -68,7 +68,7 @@ const deleteTodo = (id) => {
     };
 
     request.onerror = (event) => {
-      reject("Error deleting todo: " + event.target.errorCode);
+      reject(event.target.errorCode);
     };
   });
 };
@@ -126,6 +126,6 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 
 window.addEventListener("storage", () => {
-  list.innerHTML = ""; 
-  loadTodos();         
+  list.innerHTML = "";
+  loadTodos();
 });

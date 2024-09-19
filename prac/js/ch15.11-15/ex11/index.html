@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mandelbrot Worker Example</title>
+    <title>mandelb</title>
     <style>
         canvas {
             border: 1px solid black;
@@ -15,14 +15,13 @@
     <canvas id="mandelbrotCanvas" width="512" height="512"></canvas>
 
     <script>
-        // Canvas setup
         const canvas = document.getElementById('mandelbrotCanvas');
         const ctx = canvas.getContext('2d');
         const width = canvas.width;
         const height = canvas.height;
 
      
-        const worker = new Worker('./pWorker.js');  
+        const worker = new Worker('./worker.js');  
 
         worker.onmessage = function (message) {
             const { imageData } = message.data;

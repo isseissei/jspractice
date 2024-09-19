@@ -28,8 +28,7 @@ document.getElementById("image").addEventListener("change", (event) => {
     originalCtx.drawImage(img, 0, 0);
 
     const imageData = originalCtx.getImageData(0, 0, img.width, img.height);
-    
-    // Show the spinner while processing
+
     document.getElementById("spinner").style.display = 'block';
 
     worker.postMessage({
@@ -44,7 +43,7 @@ document.getElementById("image").addEventListener("change", (event) => {
       if (data.type === 'filterResult') {
         const outputImageData = new ImageData(data.imageData, img.width, img.height);
         filteredCtx.putImageData(outputImageData, 0, 0);
-        document.getElementById("spinner").style.display = 'none'; // Hide the spinner
+        document.getElementById("spinner").style.display = 'none';
       }
     };
   });

@@ -5,7 +5,7 @@ const input = document.querySelector("#new-todo");
 const loadTodos = () => {
   console.log("ロード")
   const todos = JSON.parse(localStorage.getItem("todos")) || [];
-  console.log("いえーい+"+todos)
+  console.log("読み込んだ+"+todos)
   todos.forEach(addTodo);
 };
 const saveTodos = () => {
