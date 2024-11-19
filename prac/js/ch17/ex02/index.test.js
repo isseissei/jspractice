@@ -1,6 +1,5 @@
 import { IssueManager } from './index.js';
 
-// fetchをモック化するために必要
 global.fetch = jest.fn();
 
 describe.skip('IssueManager', () => {
@@ -11,12 +10,11 @@ describe.skip('IssueManager', () => {
     const issueNumber = 1;
 
     beforeEach(() => {
-        // 各テスト前にfetchをリセット
         fetch.mockClear();
         console.error = jest.fn();
     });
     afterEach(() => {
-        jest.restoreAllMocks();  // 他のモックをリセットして元に戻す
+        jest.restoreAllMocks();  
     });
 
     test('CreateIssueが正常に動作する', async () => {
