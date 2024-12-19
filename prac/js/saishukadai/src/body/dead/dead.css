@@ -1,0 +1,21 @@
+/* Brm.css */
+.dead-container {
+    position: absolute;
+    /* 絶対位置指定 */
+    left: 70%;
+    /* 画面の幅の1/4の位置に配置 */
+    top: 60%;
+    /* 上部から20pxの位置に配置（任意で調整） */
+    cursor: pointer;
+    /* ポインターカーソル */
+}
+
+.dead-container img {
+    width: 300px;
+    height: 300px;
+}
+
+.dead-container:hover {
+    transform: scale(1.05); /* ホバー時に少し拡大 */
+    filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.4)); /* より強い影を追加 */
+  }

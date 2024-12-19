@@ -1,0 +1,41 @@
+.timer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 背景色を削除 */
+  }
+  
+  .timer {
+    font-family: 'Courier New', monospace;
+    font-size: 50px; /* 文字サイズを小さく調整 */
+    color: #333; /* 文字色は暗いグレー */
+    margin-bottom: 10px; /* タイマーとボタンの間隔を調整 */
+  }
+  
+  .controls button {
+    font-size: 16px; /* ボタンの文字サイズを調整 */
+    padding: 5px 10px; /* ボタン全体のサイズを小さく */
+    margin: 5px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .controls button:hover {
+    background-color: #45a049;
+  }
+  
+  .controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: center;
+  }
+  

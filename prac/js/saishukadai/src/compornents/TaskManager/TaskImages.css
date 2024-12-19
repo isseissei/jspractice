@@ -1,0 +1,13 @@
+.task-images {
+    position: absolute;
+    top: 20px; /* 画面上から20pxの余白 */
+    right: 20px; /* 画面右から20pxの余白 */
+    display: flex;
+    gap: 15px; /* 画像間の間隔を少し広げる */
+  }
+  
+  .task-image {
+    width: 60px; /* 画像サイズ */
+    height: 60px;
+  }
+  

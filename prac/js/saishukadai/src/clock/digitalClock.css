@@ -1,0 +1,23 @@
+.clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* 背景色は削除 */
+  }
+  
+  .time {
+    font-family: 'Courier New', monospace;
+    font-size: 150px;  /* 文字をもっと大きく */
+    color: black;  /* 文字色は黒 */
+    margin: 0;
+    transition: filter 0.3s ease; /* フィルター変更時にスムーズな遷移 */
+  }
+  
+  .slider-container {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    color: black;
+  }
+  

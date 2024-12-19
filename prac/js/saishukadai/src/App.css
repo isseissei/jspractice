@@ -1,0 +1,115 @@
+/* 全体を中央揃え */
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b, #d4a5a5); /* 鮮やかなグラデーション */
+  background-attachment: fixed;
+  color: #fff; /* 白文字で鮮やかさを強調 */
+  font-family: 'Arial', sans-serif; /* モダンなフォント */
+}
+
+/* マッチョマンの画像を中央に配置 */
+.macchoMan {
+  width: 300px;
+  height: auto;
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.macchoMan:hover {
+  transform: scale(1.05); /* ホバー時に少し拡大 */
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4); /* ホバー時に影を強調 */
+}
+
+/* 腕立て伏せの画像を右上に配置 */
+.line:nth-child(2) image {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 80px;
+  height: auto;
+  opacity: 0.8;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.line:nth-child(2) image:hover {
+  transform: scale(1.1);
+  opacity: 1; /* ホバー時に完全に不透明に */
+}
+
+/* スクワットの画像を左下に配置 */
+.line:nth-child(3) image {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 80px;
+  height: auto;
+  opacity: 0.8;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.line:nth-child(3) image:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* 線のスタイル */
+.line line {
+  stroke: #fff; /* 白い線にして背景と対照的に */
+  stroke-width: 3;
+  fill: none;
+  opacity: 0.7; /* 線を少し透明に */
+}
+
+/* 中央のコンテナ */
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  background: rgba(255, 255, 255, 0.7); /* 半透明の白背景 */
+  border-radius: 20px; /* 角丸を強調 */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px); /* 背景にぼかし効果 */
+}
+
+/* 中央の画像 */
+.center-image {
+  width: 20vw; /* 画面幅の25% */
+  height: auto;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3)); /* 画像に影を追加 */
+  border-radius: 10px; /* 画像を丸みのある形に */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.center-image:hover {
+  transform: scale(1.05); /* ホバー時に少し拡大 */
+  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.4)); /* より強い影を追加 */
+}
+
+/* ボタンやインタラクティブな要素 */
+button {
+  background-color: #ff6347; /* 明るいオレンジ色 */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff4500; /* ホバー時にオレンジ色を濃く */
+  transform: scale(1.1); /* ボタンを拡大 */
+}

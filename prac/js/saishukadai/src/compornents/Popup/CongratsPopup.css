@@ -1,0 +1,107 @@
+/* ポップアップの背景オーバーレイ */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)); /* グラデーションで深みを追加 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* ポップアップのコンテンツ */
+.popup-content {
+    background: linear-gradient(145deg, #ffffff, #f7f7f7); /* 優しいグラデーション背景 */
+    border-radius: 15px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* より強調された影 */
+    width: 60vw;
+    max-width: 600px;
+    animation: popupAnimation 0.5s ease-out;
+}
+
+/* ポップアップのアニメーション */
+@keyframes popupAnimation {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ポップなタイトル文字 */
+.popup-title {
+    font-size: 2.8rem; /* タイトル文字をさらに大きく */
+    color: #ff6347; /* 鮮やかなオレンジ色 */
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: popText 0.5s ease-out;
+}
+
+/* タイトルアニメーション */
+@keyframes popText {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* プロテインの画像のコンテナ */
+.popup-image-container {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* プロテイン画像 */
+.popup-image {
+    width: 150px;
+    height: auto;
+    animation: fadeInImage 1s ease-in;
+}
+
+/* 画像フェードイン */
+@keyframes fadeInImage {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* 閉じるボタン */
+.popup-close-btn {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 14px 28px; /* ボタンのサイズをさらに大きく */
+    font-size: 1.3rem; /* フォントサイズを少し大きく */
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s; /* アニメーション追加 */
+}
+
+/* ボタンのホバー効果 */
+.popup-close-btn:hover {
+    background-color: #ff4500;
+    transform: scale(1.05); /* ホバー時に少し拡大 */
+}
+
+/* ボタンを押したとき */
+.popup-close-btn:active {
+    transform: scale(0.98); /* クリック時に少し縮む */
+}

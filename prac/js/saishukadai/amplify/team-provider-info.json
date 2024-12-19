@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-muscle-dev-c09e5-authRole",
+      "UnauthRoleArn": "arn:aws:iam::654654195184:role/amplify-muscle-dev-c09e5-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::654654195184:role/amplify-muscle-dev-c09e5-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-muscle-dev-c09e5-deployment",
+      "UnauthRoleName": "amplify-muscle-dev-c09e5-unauthRole",
+      "StackName": "amplify-muscle-dev-c09e5",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:654654195184:stack/amplify-muscle-dev-c09e5/81973cf0-baa4-11ef-865f-0e71f3795cdf",
+      "AmplifyAppId": "d7dgh4vnhc8vz"
+    }
+  }
+}
